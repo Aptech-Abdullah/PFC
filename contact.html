@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <title>Contact Us | Prime Fitness Club</title>
+    <style>
+        a.logo {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 15px;
+            font-weight: 600;
+            border: 3px solid #fff;
+            padding: 10px;
+            text-shadow: none;
+            border-radius: 100%;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.7), 0 0 30px rgba(0, 0, 0, 0.6);
+
+
+
+        }
+
+        a.logo:hover {
+            transform: scale(1.1);
+        }
+
+        #myForm {
+            background-color: #000000;
+            color: #ffffff;
+            width: 600px;
+            text-align: left;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+
+        #myForm div {
+            margin-bottom: 30px;
+        }
+
+
+        #myForm label {
+            display: block;
+            text-transform: uppercase;
+            text-shadow: none;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+
+        #myForm input,
+        #myForm textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+
+        #myForm input:focus,
+        #myForm textarea:focus {
+            border-color: #ffffff;
+            background-color: #ccc;
+            outline: none;
+        }
+
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+
+        #myForm button {
+            background-color: #ffffff;
+            color: #000000;
+            font-weight: 600;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+
+        #myForm button:hover {
+            background-color: #ada9a9;
+        }
+    </style>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<body class="contact">
+    <header>
+        <nav>
+            <a href="index.html" class="logo">PRIME <br> FITNESS <br> CLUB</a>
+            <div class="dropdown-toggle" id="toggle-btn">☰</div>
+            <ul id="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <div class="custom-dropdown">
+                    <div class="dropdown-header">Services</div>
+                    <ul class="dropdown-options">
+                        <li><a href="cycling.html">Cycling</a></li>
+                        <li><a href="swimming.html">Swimming</a></li>
+                        <li><a href="sports-fitness.html">Sports & Fitness</a></li>
+                        <li><a href="salon-spa.html">Salon & Spa</a></li>
+                        <li><a href="group-exercise.html">Group Exercise</a></li>
+                    </ul>
+                </div>
+
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Contact Us | Prime Fitness Club</h1>
+
+        <form id="myForm">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <div id="nameError" class="error"></div>
+            </div>
+
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <div id="emailError" class="error"></div>
+            </div>
+
+            <div>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea>
+                <div id="messageError" class="error"></div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+        <br>
+        <footer>
+            <p>&copy; 2025 Prime Fitness Club | All rights reserved</p>
+        </footer>
+        <script src="resources/js/main.js"></script>
+</body>
+
+</html>
