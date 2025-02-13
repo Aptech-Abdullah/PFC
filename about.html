@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <title>About Us | Prime Fitness Club</title>
+    <style>
+        body {
+            background-color: rgb(20, 20, 20);
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: rgb(20, 20, 20);
+            width: 100%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.6);
+            z-index: 1000;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+        a.logo:hover {
+            transform: scale(1.1);
+        }
+        button {
+            border: none;
+            background-color: transparent;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #navbar-menu {
+            display: flex;
+            list-style-type: none;
+            padding: 10px;
+            gap: 50px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        #navbar-menu li a {
+            padding: 10px;
+        }
+
+        #navbar-menu li a:hover {
+            transition: all 0.1s ease-in;
+            transform: scale(1.2);
+        }
+
+        .custom-dropdown {
+            position: relative;
+            width: 170px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .custom-dropdown:hover {
+            /* text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.6); */
+            transition: 0.2s ease-in-out;
+        }
+
+        .dropdown-header {
+            width: auto;
+            padding: 0px 10px;
+            border: none;
+            background-color: transparent;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .dropdown-options {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: rgb(20, 20, 20);
+            color: #fff;
+            border: 1px solid black;
+            border-radius: 5px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            z-index: 1000;
+        }
+
+        .dropdown-options li {
+            padding: 10px;
+            color: #fff;
+            font-size: medium;
+            width: max-content;
+        }
+
+        .dropdown-options li:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-options li a {
+            text-decoration: none;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .dropdown-options li a:hover {
+            color: #007bff;
+            text-decoration: none;
+            border: none;
+        }
+
+        .custom-dropdown:hover .dropdown-options {
+            display: block;
+        }
+
+        /* Mobile Menu */
+        .dropdown-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            #navbar-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: rgb(20, 20, 20);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 20px 0;
+                z-index: 1000;
+            }
+
+            ul.show {
+                display: flex;
+            }
+
+            .dropdown-toggle {
+                display: block;
+            }
+
+            /* Adjusting the width of images and layout for mobile */
+            .images {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .images img {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            .content-section li {
+                font-size: 14px;
+                text-align: left; 
+            }
+
+        }
+
+        .container {
+            width: 95%;
+            margin: 0 auto;
+            padding: 0 20px; 
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-top: 30px;
+            border-bottom: 2px solid grey;
+            padding-bottom: 10px;
+            text-shadow: none;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-shadow: none;
+        }
+
+        .content-section {
+            margin-bottom: 50px;
+            text-shadow: none;
+        }
+
+        .content-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-shadow: none;
+        }
+
+        .content-section li {
+            font-size: 15px;
+            margin-bottom: 40px;
+            text-align: right;
+        }
+
+        .content-section li::before {
+            content: "\2022";
+            color: #fff;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* Fix: Ensure image section behaves well on mobile */
+        .images img {
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        /* Basic styling for the list */
+.list {
+    padding: 0;
+    margin: 20px 0;
+    list-style-type: circle; /* Remove default bullets */
+    text-align: justify;
+    margin-left: 10px;
+    align-items: center;
+}
+
+.list-item {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #fff; /* White text for readability */
+    padding-left: 20px;
+    position: relative;
+    margin-left: 10px;
+}
+
+/* Adding a bullet point for each list item */
+
+
+/* Optional: Adding hover effect */
+
+/* For responsive behavior on small screens */
+@media (max-width: 768px) {
+    .list-item {
+        font-size: 1.1em; /* Slightly smaller font size on smaller screens */
+        margin-bottom: 12px;
+    }
+}
+
+.h2{
+    margin-left: 60px;
+}
+
+
+a.logo:hover{
+    transform: scale(1.1);
+}
+footer{
+    margin-top: 200px;
+}
+.container{
+    margin-top: 50px;
+}
+.container h2{
+    margin-bottom: 40px;
+}
+
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">PRIME <br> FITNESS <br> CLUB</a>
+            <div class="dropdown-toggle" id="toggle-btn">☰</div>
+            <ul id="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <div class="custom-dropdown">
+                    <div class="dropdown-header">Services</div>
+                    <ul class="dropdown-options">
+                        <li><a href="cycling.html">Cycling</a></li>
+                        <li><a href="swimming.html">Swimming</a></li>
+                        <li><a href="sports-fitness.html">Sports & Fitness</a></li>
+                        <li><a href="salon-spa.html">Salon & Spa</a></li>
+                        <li><a href="group-exercise.html">Group Exercise</a></li>
+                    </ul>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Us Section -->
+    <section class="about-us">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Welcome to Prime Fitness Club! We are dedicated to providing the best fitness experience, offering a variety of equipment and training programs designed to help you achieve your personal fitness goals. Whether you're looking to build strength, improve endurance, or maintain a healthy lifestyle, we have everything you need to succeed.</p>
+
+            <h3>Our Mission</h3>
+            <p>Our mission is to create a welcoming and supportive environment where individuals of all fitness levels can come together, get stronger, and lead healthier lives. We strive to make fitness accessible and enjoyable for everyone who walks through our doors.</p>
+
+            <h3>Why Choose Us?</h3>
+<ul class="list">
+    <li class="list-item">State-of-the-art equipment</li>
+    <li class="list-item">Experienced and certified trainers</li>
+    <li class="list-item">Personalized fitness plans</li>
+    <li class="list-item">Group classes and workshops</li>
+    <li class="list-item">Community-focused atmosphere</li>
+</ul>
+
+
+            <h3>Our Team</h3>
+            <p>Our team is made up of passionate fitness experts who are here to support you every step of the way. From trainers to customer service staff, we are all committed to your success and well-being.</p>
+        </div>
+    </section>
+    <br>
+    <footer id="footer">
+        <div class="foot_mid">
+          <div class="logo_container">
+      
+              <a href="" class="logo">Prime <br> Fitness <br> Club</a>
+      
+          </div>
+      
+          <div>
+           <h2>Links</h2>
+           <ul>
+      
+               <li>
+                 <a href="" class="foot_link">Home</a>
+               </li>
+               <li>
+                 <a href="" class="foot_link">Gallery</a>
+               </li>
+             
+               <li>
+                 <a href="" class="foot_link">Feedback</a>
+               </li>
+      
+               <li>
+                 <a href="" class="foot_link">Blogs</a>
+               </li>
+           </ul>
+          </div>
+         
+          <div>
+            <h2>Company</h2>
+            <ul>
+              <li>
+               <a href="" class="foot_link">Privacy</a>
+              </li>
+             
+              <li>
+               <a href="" class="foot_link">Terms</a>
+              </li>
+      
+              <li>
+               <a href="" class="foot_link">careeer</a>
+              </li>
+      
+              <li>
+               <a href="" class="foot_link">How do we work</a>
+              </li>
+      
+            </ul>
+      
+          </div>  
+      
+      
+        <div class="support">
+      
+         <h2 class="h2">Support</h2>
+         <a href="tel:+923146585450">(+92) 314-6585-450</a><br>
+         <a href="mailto:afnanimtiaz@gmail.com? subject=help me to understant code">PFC@gmail.com</a><br>
+      
+         <span>
+      
+          <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+      
+          <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+      
+          <a href="https//wa.me?+923146585450"><i class="fa-brands fa-whatsapp"></i></a>
+         </span>
+        </div>
+      </div>
+       </footer>
+
+    <script src="resources/js/main.js"></script>
+</body>
+</html>
